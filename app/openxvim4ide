@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+#
+# in idea use:
+# --args "$FilePath$" "+normal $LineNumber$G$ColumnNumber$|"
+#
+# osascript <<END! - "AAAAA"
+#     on run input
+#         display dialog input
+#     end run
+# END!
+if [ -x /usr/libexec/path_helper ]; then
+    eval `/usr/libexec/path_helper -s`
+fi
+
+_USE_TMUX=1
+_EDITOR='nvim'
+__options=$(echo $2 | sed "s/|/\\\\|/g")
+__options=$(echo $__options | sed "s/ /\\\\ /g")
+__filepath=$(echo $1 | sed "s/ /\\\\ /g")
+__file_edit_str="$__options $__filepath"
+if [ "$_USE_TMUX" == "1" ] && test $(which tmux)
+then
+    _SOCKET_NAME='OpenXVim'
+    _SESSION_NAME="xvim"
+    _WINDOW_NAME=$_EDITOR
+    _TARGET_SESSION="=$_SESSION_NAME"
+    _TARGET_WINDOW="=$_SESSION_NAME:=$_WINDOW_NAME"
+    _TARGET_PANE=$_TARGET_WINDOW".1"
+    _reattach_session='false'
+    if ! tmux -L $_SOCKET_NAME has-session -t $_TARGET_SESSION >/dev/null 2>&1
+    then
+        tmux -L $_SOCKET_NAME new-session -d -s $_SESSION_NAME -n $_WINDOW_NAME
+        tmux -L $_SOCKET_NAME send-key -t $_TARGET_PANE "alias :e=$_EDITOR" ENTER
+        tmux -L $_SOCKET_NAME send-key -t $_TARGET_PANE ":e $__file_edit_str" ENTER
+    else
+        _windows=($(tmux -L $_SOCKET_NAME list-windows -t $_TARGET_SESSION -F "#W"))
+        _has_windows=$(echo "${_windows[@]}" | grep -wq $_WINDOW_NAME && echo 1)
+        if [ ! "$_has_windows" == "1" ]
+        then
+            tmux -L $_SOCKET_NAME new-window -t $_TARGET_SESSION -n $_WINDOW_NAME
+            tmux -L $_SOCKET_NAME send-key -t $_TARGET_PANE "alias :e=$_EDITOR" ENTER
+        fi
+        tmux -L $_SOCKET_NAME select-pane -t $_TARGET_PANE
+        tmux -L $_SOCKET_NAME send-key -t $_TARGET_PANE ":e $__file_edit_str" ENTER
+    fi
+    _session_attached=$(tmux -L $_SOCKET_NAME display-message -p -t $_TARGET_WINDOW "#{session_attached}")
+    if [ "$_session_attached" == "0" ]
+    then
+        _reattach_session='true'
+    fi
+    osascript itermhelper4tmux.scpt $_SOCKET_NAME $_reattach_session $_SESSION_NAME "$_EDITOR" "$__file_edit_str"
+else
+    osascript itermhelper.scpt "$_EDITOR" "$__file_edit_str"
+fi
