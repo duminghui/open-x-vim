@@ -14,6 +14,7 @@
 	<array>
 		<string>/Users/dumh/github/open-x-vim/app/itermhelper.scpt</string>
 		<string>/Users/dumh/github/open-x-vim/app/itermhelper4tmux.scpt</string>
+		<string>/Users/dumh/github/open-x-vim/app/openxvim</string>
 	</array>
 	<key>Creator</key>
 	<string>Platypus-5.1</string>
@@ -54,7 +55,7 @@
 	<key>ScriptArgs</key>
 	<array/>
 	<key>ScriptPath</key>
-	<string>/Users/dumh/github/open-x-vim/app/openxvim</string>
+	<string>/Users/dumh/github/open-x-vim/app/openneovim</string>
 	<key>Secure</key>
 	<false/>
 	<key>ShowInDock</key>

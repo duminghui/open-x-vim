@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#
+# in idea use:
+# --args "$FilePath$" "+normal $LineNumber$G$ColumnNumber$|"
+#
+./openxvim 'vim' "$@"
