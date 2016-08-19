@@ -12,6 +12,8 @@ if [ -x /usr/libexec/path_helper ]; then
     eval `/usr/libexec/path_helper -s`
 fi
 
+_SCRIPT_HOME="$(dirname $0)"
+
 _USE_TMUX=1
 _EDITOR="$1"
 if [ "$_EDITOR" == "" ]
@@ -53,7 +55,7 @@ then
     then
         _reattach_session='true'
     fi
-    osascript itermhelper4tmux.scpt $_SOCKET_NAME $_reattach_session $_SESSION_NAME "$_EDITOR" "$__file_edit_str"
+    osascript $_SCRIPT_HOME/itermhelper4tmux.scpt $_SOCKET_NAME $_reattach_session $_SESSION_NAME
 else
-    osascript itermhelper.scpt "$_EDITOR" "$__file_edit_str"
+    osascript $_SCRIPT_HOME/itermhelper.scpt "$_EDITOR" "$__file_edit_str"
 fi

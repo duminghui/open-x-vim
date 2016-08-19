@@ -3,4 +3,5 @@
 # in idea use:
 # --args "$FilePath$" "+normal $LineNumber$G$ColumnNumber$|"
 #
-./openxvim 'nvim' "$@"
+_SCRIPT_HOME="$(dirname $0)"
+$_SCRIPT_HOME/openxvim 'nvim' "$@"

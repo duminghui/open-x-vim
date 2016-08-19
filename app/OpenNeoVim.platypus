@@ -51,7 +51,7 @@
 	<key>PromptForFileOnLaunch</key>
 	<false/>
 	<key>RemainRunning</key>
-	<false/>
+	<true/>
 	<key>ScriptArgs</key>
 	<array/>
 	<key>ScriptPath</key>
@@ -59,7 +59,7 @@
 	<key>Secure</key>
 	<false/>
 	<key>ShowInDock</key>
-	<false/>
+	<true/>
 	<key>StatusItemDisplayType</key>
 	<string>Text</string>
 	<key>StatusItemIcon</key>
