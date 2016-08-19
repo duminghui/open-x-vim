@@ -12,8 +12,8 @@
 	<string>dumh</string>
 	<key>BundledFiles</key>
 	<array>
-		<string>/Users/dumh/github/open-x-vim-4-ide/app/itermhelper4tmux.scpt</string>
-		<string>/Users/dumh/github/open-x-vim-4-ide/app/itermhelper.scpt</string>
+		<string>/Users/dumh/github/open-x-vim/app/itermhelper.scpt</string>
+		<string>/Users/dumh/github/open-x-vim/app/itermhelper4tmux.scpt</string>
 	</array>
 	<key>Creator</key>
 	<string>Platypus-5.1</string>
@@ -31,10 +31,8 @@
 	<true/>
 	<key>ExecutablePath</key>
 	<string>/usr/local/share/platypus/ScriptExec</string>
-	<key>IconPath</key>
-	<string>/usr/local/share/platypus/PlatypusDefault.icns</string>
 	<key>Identifier</key>
-	<string>com.github.duminghui.OpenNeoVim4IDE</string>
+	<string>com.github.duminghui.OpenNeoVim</string>
 	<key>Interpreter</key>
 	<string>/usr/bin/env</string>
 	<key>InterpreterArgs</key>
@@ -42,7 +40,7 @@
 		<string>bash</string>
 	</array>
 	<key>Name</key>
-	<string>OpenNeoVim4IDE</string>
+	<string>OpenNeoVim</string>
 	<key>NibPath</key>
 	<string>/usr/local/share/platypus/MainMenu.nib</string>
 	<key>OptimizeApplication</key>
@@ -56,7 +54,7 @@
 	<key>ScriptArgs</key>
 	<array/>
 	<key>ScriptPath</key>
-	<string>/Users/dumh/github/open-x-vim-4-ide/app/openxvim4ide</string>
+	<string>/Users/dumh/github/open-x-vim/app/openxvim</string>
 	<key>Secure</key>
 	<false/>
 	<key>ShowInDock</key>

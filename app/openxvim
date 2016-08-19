@@ -13,7 +13,7 @@ if [ -x /usr/libexec/path_helper ]; then
 fi
 
 _USE_TMUX=1
-_EDITOR='nvim'
+_EDITOR='vim'
 __options=$(echo $2 | sed "s/|/\\\\|/g")
 __options=$(echo $__options | sed "s/ /\\\\ /g")
 __filepath=$(echo $1 | sed "s/ /\\\\ /g")
