@@ -9,6 +9,6 @@ brew cask install openxvim
 ```
 
 ## About Alfred-workflows
-Alfred workflows use [franzheidl/alfred-workflows]
+Alfred workflows base on [franzheidl/alfred-workflows]
 
 [franzheidl/alfred-workflows]:https://github.com/franzheidl/alfred-workflows
