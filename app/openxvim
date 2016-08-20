@@ -12,7 +12,7 @@ if [ -x /usr/libexec/path_helper ]; then
     eval `/usr/libexec/path_helper -s`
 fi
 
-_SCRIPT_HOME="$(dirname $0)"
+_SCRIPT_HOME="$(dirname "$0")"
 
 _USE_TMUX=1
 _EDITOR="$1"
@@ -24,6 +24,8 @@ __options=$(echo $3 | sed "s/|/\\\\|/g")
 __options=$(echo $__options | sed "s/ /\\\\ /g")
 __filepath=$(echo $2 | sed "s/ /\\\\ /g")
 __file_edit_str="$__options $__filepath"
+__fileroot="$(dirname "$2")"
+__fileroot=$(echo $__fileroot | sed "s/ /\\\\ /g")
 if [ "$_USE_TMUX" == "1" ] && test $(which tmux)
 then
     _SOCKET_NAME='OpenXVim'
@@ -37,6 +39,7 @@ then
     then
         tmux -L $_SOCKET_NAME new-session -d -s $_SESSION_NAME -n $_WINDOW_NAME
         tmux -L $_SOCKET_NAME send-key -t $_TARGET_PANE "alias :e=$_EDITOR" ENTER
+        tmux -L $_SOCKET_NAME send-key -t $_TARGET_PANE "cd $__fileroot" ENTER
     fi
     _session_attached=$(tmux -L $_SOCKET_NAME display-message -p -t $_TARGET_WINDOW "#{session_attached}")
     if [ "$_session_attached" == "0" ]
@@ -50,6 +53,7 @@ then
     then
         tmux -L $_SOCKET_NAME new-window -t $_TARGET_SESSION -n $_WINDOW_NAME
         tmux -L $_SOCKET_NAME send-key -t $_TARGET_PANE "alias :e=$_EDITOR" ENTER
+        tmux -L $_SOCKET_NAME send-key -t $_TARGET_PANE "cd $__fileroot" ENTER
     fi
     tmux -L $_SOCKET_NAME select-window -t $_TARGET_WINDOW
     tmux -L $_SOCKET_NAME select-pane -t $_TARGET_PANE
