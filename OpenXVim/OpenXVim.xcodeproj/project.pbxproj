@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		32B42DA71D6B463F00858CDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B42DA61D6B463F00858CDB /* AppDelegate.m */; };
+		32B42DAA1D6B463F00858CDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B42DA91D6B463F00858CDB /* main.m */; };
+		32B42DAC1D6B463F00858CDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DAB1D6B463F00858CDB /* Assets.xcassets */; };
+		32B42DAF1D6B463F00858CDB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DAD1D6B463F00858CDB /* MainMenu.xib */; };
+		32B42DB91D6B470600858CDB /* icon_neovim.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DB71D6B470600858CDB /* icon_neovim.png */; };
+		32B42DBA1D6B470600858CDB /* icon_vim.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DB81D6B470600858CDB /* icon_vim.png */; };
+		32B42DBD1D6B47B900858CDB /* StatusBarMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B42DBC1D6B47B900858CDB /* StatusBarMenu.m */; };
+		32B42DC01D6B47C600858CDB /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B42DBF1D6B47C600858CDB /* AppSettings.m */; };
+		32B42DC51D6B49E800858CDB /* itermhelper.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DC21D6B49E800858CDB /* itermhelper.scpt */; };
+		32B42DC61D6B49E800858CDB /* itermhelper4tmux.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DC31D6B49E800858CDB /* itermhelper4tmux.scpt */; };
+		32B42DC71D6B49E800858CDB /* openxvim in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DC41D6B49E800858CDB /* openxvim */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		32B42DA21D6B463F00858CDB /* OpenXVim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenXVim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32B42DA51D6B463F00858CDB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		32B42DA61D6B463F00858CDB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		32B42DA91D6B463F00858CDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32B42DAB1D6B463F00858CDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32B42DAE1D6B463F00858CDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		32B42DB01D6B463F00858CDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32B42DB71D6B470600858CDB /* icon_neovim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_neovim.png; sourceTree = "<group>"; };
+		32B42DB81D6B470600858CDB /* icon_vim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_vim.png; sourceTree = "<group>"; };
+		32B42DBB1D6B47B900858CDB /* StatusBarMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusBarMenu.h; sourceTree = "<group>"; };
+		32B42DBC1D6B47B900858CDB /* StatusBarMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusBarMenu.m; sourceTree = "<group>"; };
+		32B42DBE1D6B47C600858CDB /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
+		32B42DBF1D6B47C600858CDB /* AppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettings.m; sourceTree = "<group>"; };
+		32B42DC21D6B49E800858CDB /* itermhelper.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = itermhelper.scpt; sourceTree = "<group>"; };
+		32B42DC31D6B49E800858CDB /* itermhelper4tmux.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = itermhelper4tmux.scpt; sourceTree = "<group>"; };
+		32B42DC41D6B49E800858CDB /* openxvim */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = openxvim; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32B42D9F1D6B463F00858CDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32B42D991D6B463F00858CDB = {
+			isa = PBXGroup;
+			children = (
+				32B42DA41D6B463F00858CDB /* OpenXVim */,
+				32B42DA31D6B463F00858CDB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		32B42DA31D6B463F00858CDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32B42DA21D6B463F00858CDB /* OpenXVim.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32B42DA41D6B463F00858CDB /* OpenXVim */ = {
+			isa = PBXGroup;
+			children = (
+				32B42DC11D6B498900858CDB /* Scripts */,
+				32B42DB61D6B46FB00858CDB /* Images */,
+				32B42DA51D6B463F00858CDB /* AppDelegate.h */,
+				32B42DA61D6B463F00858CDB /* AppDelegate.m */,
+				32B42DBB1D6B47B900858CDB /* StatusBarMenu.h */,
+				32B42DBC1D6B47B900858CDB /* StatusBarMenu.m */,
+				32B42DBE1D6B47C600858CDB /* AppSettings.h */,
+				32B42DBF1D6B47C600858CDB /* AppSettings.m */,
+				32B42DAB1D6B463F00858CDB /* Assets.xcassets */,
+				32B42DAD1D6B463F00858CDB /* MainMenu.xib */,
+				32B42DB01D6B463F00858CDB /* Info.plist */,
+				32B42DA81D6B463F00858CDB /* Supporting Files */,
+			);
+			path = OpenXVim;
+			sourceTree = "<group>";
+		};
+		32B42DA81D6B463F00858CDB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				32B42DA91D6B463F00858CDB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		32B42DB61D6B46FB00858CDB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				32B42DB71D6B470600858CDB /* icon_neovim.png */,
+				32B42DB81D6B470600858CDB /* icon_vim.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		32B42DC11D6B498900858CDB /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				32B42DC21D6B49E800858CDB /* itermhelper.scpt */,
+				32B42DC31D6B49E800858CDB /* itermhelper4tmux.scpt */,
+				32B42DC41D6B49E800858CDB /* openxvim */,
+			);
+			name = Scripts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32B42DA11D6B463F00858CDB /* OpenXVim */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32B42DB31D6B463F00858CDB /* Build configuration list for PBXNativeTarget "OpenXVim" */;
+			buildPhases = (
+				32B42D9E1D6B463F00858CDB /* Sources */,
+				32B42D9F1D6B463F00858CDB /* Frameworks */,
+				32B42DA01D6B463F00858CDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenXVim;
+			productName = OpenXVim;
+			productReference = 32B42DA21D6B463F00858CDB /* OpenXVim.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32B42D9A1D6B463F00858CDB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = dumh;
+				TargetAttributes = {
+					32B42DA11D6B463F00858CDB = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 32B42D9D1D6B463F00858CDB /* Build configuration list for PBXProject "OpenXVim" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32B42D991D6B463F00858CDB;
+			productRefGroup = 32B42DA31D6B463F00858CDB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32B42DA11D6B463F00858CDB /* OpenXVim */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32B42DA01D6B463F00858CDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32B42DAC1D6B463F00858CDB /* Assets.xcassets in Resources */,
+				32B42DB91D6B470600858CDB /* icon_neovim.png in Resources */,
+				32B42DC61D6B49E800858CDB /* itermhelper4tmux.scpt in Resources */,
+				32B42DC51D6B49E800858CDB /* itermhelper.scpt in Resources */,
+				32B42DC71D6B49E800858CDB /* openxvim in Resources */,
+				32B42DAF1D6B463F00858CDB /* MainMenu.xib in Resources */,
+				32B42DBA1D6B470600858CDB /* icon_vim.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32B42D9E1D6B463F00858CDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32B42DBD1D6B47B900858CDB /* StatusBarMenu.m in Sources */,
+				32B42DAA1D6B463F00858CDB /* main.m in Sources */,
+				32B42DC01D6B47C600858CDB /* AppSettings.m in Sources */,
+				32B42DA71D6B463F00858CDB /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		32B42DAD1D6B463F00858CDB /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32B42DAE1D6B463F00858CDB /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		32B42DB11D6B463F00858CDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		32B42DB21D6B463F00858CDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		32B42DB41D6B463F00858CDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OpenXVim/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.duminghui.OpenXVim;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		32B42DB51D6B463F00858CDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OpenXVim/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.duminghui.OpenXVim;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32B42D9D1D6B463F00858CDB /* Build configuration list for PBXProject "OpenXVim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32B42DB11D6B463F00858CDB /* Debug */,
+				32B42DB21D6B463F00858CDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32B42DB31D6B463F00858CDB /* Build configuration list for PBXNativeTarget "OpenXVim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32B42DB41D6B463F00858CDB /* Debug */,
+				32B42DB51D6B463F00858CDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32B42D9A1D6B463F00858CDB /* Project object */;
+}

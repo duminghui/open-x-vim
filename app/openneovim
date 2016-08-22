@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-#
-# in idea use:
-# --args "$FilePath$" "+normal $LineNumber$G$ColumnNumber$|"
-#
-_SCRIPT_HOME="$(dirname $0)"
-$_SCRIPT_HOME/openxvim 'nvim' "$@"

@@ -14,17 +14,22 @@ fi
 
 _SCRIPT_HOME="$(dirname "$0")"
 
-_USE_TMUX=1
-_EDITOR="$1"
+_USE_TMUX="$4"
+if [ "$_USE_TMUX" == "" ]
+then
+    _USE_TMUX=1
+fi
+
+_EDITOR="$3"
 if [ "$_EDITOR" == "" ]
 then
     _EDITOR='vim'
 fi
-__options=$(echo $3 | sed "s/|/\\\\|/g")
+__options=$(echo $2 | sed "s/|/\\\\|/g")
 __options=$(echo $__options | sed "s/ /\\\\ /g")
-__filepath=$(echo $2 | sed "s/ /\\\\ /g")
+__filepath=$(echo $1 | sed "s/ /\\\\ /g")
 __file_edit_str="$__options $__filepath"
-__fileroot="$(dirname "$2")"
+__fileroot="$(dirname "$1")"
 __fileroot=$(echo $__fileroot | sed "s/ /\\\\ /g")
 if [ "$_USE_TMUX" == "1" ] && test $(which tmux)
 then
