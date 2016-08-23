@@ -45,10 +45,13 @@
   if (x == ((UInt16)65534)) {
     x = 0;
   }
-  x += 1;
+  // check to see if Unity didn't pass in a line
+  if(x >= 17477) {
+    x = 0;
+  }
   
-  const AEKeyword filekey  = '----';
-  NSString *filepath = [[[event descriptorForKeyword:filekey] stringValue] stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+  NSString *filepath = [[[event descriptorForKeyword:keyDirectObject] stringValue] stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+  filepath = [filepath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   [self openFile:filepath lineNum:x];
 }
 
@@ -60,8 +63,12 @@
   NSFileHandle * file = pipe.fileHandleForReading;
   NSTask *task = [[NSTask alloc] init];
   task.launchPath = cmdPath;
-  NSString * options = [NSString stringWithFormat:@"+normal %huG1|",lineNum];
-  task.arguments = @[filepath,options,
+  NSString * options = @"";
+  if(lineNum > 0 ){
+    options = [NSString stringWithFormat:@"+normal %dG1|",lineNum+1];
+  }
+  task.arguments = @[filepath,
+                     options,
                      [settings editor],
                      [NSString stringWithFormat:@"%hhd",[settings useTmux]]
                      ];
