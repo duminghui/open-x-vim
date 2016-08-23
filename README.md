@@ -4,7 +4,7 @@
 # Install
 ```
 brew tap duminghui/tap
-brew cask install openxvim
+brew install open-x-vim
 
 ```
 
