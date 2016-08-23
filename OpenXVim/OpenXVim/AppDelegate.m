@@ -33,13 +33,45 @@
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
   [[NSAppleEventManager sharedAppleEventManager]
-   setEventHandler:self andSelector:@selector(handleAppleEvent:withReplyEvent:)
+   setEventHandler:self andSelector:@selector(handleOpenDocumentsEvent:withReplyEvent:)
    forEventClass:kCoreEventClass andEventID:kAEOpenDocuments];
+  //  [[NSAppleEventManager sharedAppleEventManager]
+  //   setEventHandler:self andSelector:@selector(handleReopenApplicationEvent:withReplyEvent:)
+  //   forEventClass:kCoreEventClass andEventID:kAEReopenApplication];
 }
 
-- (void)handleAppleEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
+
+//- (void)handleReopenApplicationEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
+//  NSAppleEventDescriptor* fileListDescriptor = [replyEvent paramDescriptorForKeyword:keyDirectObject];
+//  NSInteger numberOfFiles = [fileListDescriptor numberOfItems];
+//  NSLog(@"filenumber:%ld",(long)numberOfFiles);
+//  NSString* filepath = [[replyEvent descriptorForKeyword:keyDirectObject] stringValue];
+//  filepath = [filepath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//  filepath = [filepath stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+//  NSLog(@"filepath:%@",filepath);
+//  //  keyDirectObject               = '----',
+//  //  keyErrorNumber                = 'errn',
+//  //  keyErrorString                = 'errs',
+//  //  keyProcessSerialNumber        = 'psn ', /* Keywords for special handlers */
+//  //  keyPreDispatch                = 'phac', /* preHandler accessor call */
+//  //  keySelectProc                 = 'selh', /* more selector call */
+//  //  /* Keyword for recording */
+//  //  keyAERecorderCount            = 'recr', /* available only in vers 1.0.1 and greater */
+//  //  /* Keyword for version information */
+//  //  keyAEVersion                  = 'vers' /* available only in vers 1.0.1 and greater */;
+//  NSLog(@"keyDirectObject:%@",[[event paramDescriptorForKeyword:keyDirectObject]description]);
+//  NSLog(@"keyErrorNumber:%@",[[event paramDescriptorForKeyword:keyErrorNumber]description]);
+//  NSLog(@"keyErrorString:%@",[[event paramDescriptorForKeyword:keyErrorString]description]);
+//  NSLog(@"keyProcessSerialNumber:%@",[[event paramDescriptorForKeyword:keyProcessSerialNumber]description]);
+//  NSLog(@"keyPreDispatch:%@",[[event paramDescriptorForKeyword:keyPreDispatch]description]);
+//  NSLog(@"keySelectProc:%@",[[event paramDescriptorForKeyword:keySelectProc]description]);
+//  NSLog(@"keyAERecorderCount:%@",[[event paramDescriptorForKeyword:keyAERecorderCount]description]);
+//  NSLog(@"keyAEVersion:%@",[[event paramDescriptorForKeyword:keyAEVersion]description]);
+//}
+
+
+- (void)handleOpenDocumentsEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
   NSAppleEventDescriptor* fileListDescriptor = [event paramDescriptorForKeyword:keyDirectObject];
-  
   // Descriptor list indexing is one-based...
   NSInteger numberOfFiles = [fileListDescriptor numberOfItems];
   NSLog(@"filenumber:%ld",(long)numberOfFiles);
@@ -104,6 +136,15 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
   // Insert code here to tear down your application
+}
+-(BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender{
+  //  NSLog(@"AAAAAAAABBBBBBB");
+  return true;
+}
+
+-(BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag{
+  //  NSLog(@"###################");
+  return true;
 }
 
 @end
