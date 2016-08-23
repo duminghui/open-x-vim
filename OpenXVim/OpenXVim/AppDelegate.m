@@ -34,25 +34,41 @@
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
   [[NSAppleEventManager sharedAppleEventManager]
    setEventHandler:self andSelector:@selector(handleAppleEvent:withReplyEvent:)
-   forEventClass:'aevt' andEventID:'odoc'];
+   forEventClass:kCoreEventClass andEventID:kAEOpenDocuments];
 }
 
 - (void)handleAppleEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
-  NSData *eventData = [event data];
-  unsigned char *buffer = malloc(sizeof(UInt16));
-  [eventData getBytes: buffer range:NSMakeRange(422, sizeof(UInt16))];
-  UInt16 x = *(UInt16 *)buffer;
-  if (x == ((UInt16)65534)) {
-    x = 0;
-  }
-  // check to see if Unity didn't pass in a line
-  if(x >= 17477) {
-    x = 0;
-  }
+  NSAppleEventDescriptor* fileListDescriptor = [event paramDescriptorForKeyword:keyDirectObject];
   
-  NSString *filepath = [[[event descriptorForKeyword:keyDirectObject] stringValue] stringByReplacingOccurrencesOfString:@"file://" withString:@""];
-  filepath = [filepath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-  [self openFile:filepath lineNum:x];
+  // Descriptor list indexing is one-based...
+  NSInteger numberOfFiles = [fileListDescriptor numberOfItems];
+  NSLog(@"filenumber:%ld",(long)numberOfFiles);
+  if(numberOfFiles == 0){
+    NSData *eventData = [event data];
+    unsigned char *buffer = malloc(sizeof(UInt16));
+    [eventData getBytes: buffer range:NSMakeRange(422, sizeof(UInt16))];
+    UInt16 x = *(UInt16 *)buffer;
+    if (x == ((UInt16)65534)) {
+      x = 0;
+    }
+    // check to see if Unity didn't pass in a line
+    if(x >= 17477) {
+      x = 0;
+    }
+    
+    NSString* filepath = [[event descriptorForKeyword:keyDirectObject] stringValue];
+    filepath = [filepath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    filepath = [filepath stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+    [self openFile:filepath lineNum:x];
+  }else{
+    for (NSInteger i = 1; i <= numberOfFiles; i++) {
+      NSString* filepath = [[fileListDescriptor descriptorAtIndex:i] stringValue];
+      filepath = [filepath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+      filepath = [filepath stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+      NSLog(@"filepath:[%ld],%@",(long)i,filepath);
+      [self openFile:filepath lineNum:0];
+    }
+  }
 }
 
 -(void)openFile:(NSString*)filepath lineNum:(UInt16) lineNum{
