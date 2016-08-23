@@ -11,8 +11,6 @@
 		32B42DAA1D6B463F00858CDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B42DA91D6B463F00858CDB /* main.m */; };
 		32B42DAC1D6B463F00858CDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DAB1D6B463F00858CDB /* Assets.xcassets */; };
 		32B42DAF1D6B463F00858CDB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DAD1D6B463F00858CDB /* MainMenu.xib */; };
-		32B42DB91D6B470600858CDB /* icon_neovim.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DB71D6B470600858CDB /* icon_neovim.png */; };
-		32B42DBA1D6B470600858CDB /* icon_vim.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DB81D6B470600858CDB /* icon_vim.png */; };
 		32B42DBD1D6B47B900858CDB /* StatusBarMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B42DBC1D6B47B900858CDB /* StatusBarMenu.m */; };
 		32B42DC01D6B47C600858CDB /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B42DBF1D6B47C600858CDB /* AppSettings.m */; };
 		32B42DC51D6B49E800858CDB /* itermhelper.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 32B42DC21D6B49E800858CDB /* itermhelper.scpt */; };
@@ -28,8 +26,6 @@
 		32B42DAB1D6B463F00858CDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32B42DAE1D6B463F00858CDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		32B42DB01D6B463F00858CDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32B42DB71D6B470600858CDB /* icon_neovim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_neovim.png; sourceTree = "<group>"; };
-		32B42DB81D6B470600858CDB /* icon_vim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_vim.png; sourceTree = "<group>"; };
 		32B42DBB1D6B47B900858CDB /* StatusBarMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusBarMenu.h; sourceTree = "<group>"; };
 		32B42DBC1D6B47B900858CDB /* StatusBarMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusBarMenu.m; sourceTree = "<group>"; };
 		32B42DBE1D6B47C600858CDB /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
@@ -70,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				32B42DC11D6B498900858CDB /* Scripts */,
-				32B42DB61D6B46FB00858CDB /* Images */,
 				32B42DA51D6B463F00858CDB /* AppDelegate.h */,
 				32B42DA61D6B463F00858CDB /* AppDelegate.m */,
 				32B42DBB1D6B47B900858CDB /* StatusBarMenu.h */,
@@ -91,15 +86,6 @@
 				32B42DA91D6B463F00858CDB /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		32B42DB61D6B46FB00858CDB /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				32B42DB71D6B470600858CDB /* icon_neovim.png */,
-				32B42DB81D6B470600858CDB /* icon_vim.png */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 		32B42DC11D6B498900858CDB /* Scripts */ = {
@@ -170,12 +156,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				32B42DAC1D6B463F00858CDB /* Assets.xcassets in Resources */,
-				32B42DB91D6B470600858CDB /* icon_neovim.png in Resources */,
 				32B42DC61D6B49E800858CDB /* itermhelper4tmux.scpt in Resources */,
 				32B42DC51D6B49E800858CDB /* itermhelper.scpt in Resources */,
 				32B42DC71D6B49E800858CDB /* openxvim in Resources */,
 				32B42DAF1D6B463F00858CDB /* MainMenu.xib in Resources */,
-				32B42DBA1D6B470600858CDB /* icon_vim.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +315,7 @@
 				32B42DB51D6B463F00858CDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

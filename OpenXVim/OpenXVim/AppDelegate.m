@@ -144,6 +144,11 @@
 
 -(BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag{
   //  NSLog(@"###################");
+  //can't get new arguments
+  //  NSArray<NSString*> * args = [[NSProcessInfo processInfo] arguments];
+  //  for(NSString *item in args){
+  //    NSLog(@"%@",item);
+  //  }
   return true;
 }
 

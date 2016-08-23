@@ -56,11 +56,11 @@
     if([settings isVimEditor]){
       vimItem.state = NSOnState;
       neoVimItem.state = NSOffState;
-      statusItem.image = [NSImage imageNamed:@"icon_vim.png"];
+      statusItem.image = [NSImage imageNamed:@"statusbar_icon_vim"];
     }else{
       vimItem.state = NSOffState;
       neoVimItem.state = NSOnState;
-      statusItem.image = [NSImage imageNamed:@"icon_neovim.png"];
+      statusItem.image = [NSImage imageNamed:@"statusbar_icon_neovim"];
     }
     
     if([settings useTmux]){
@@ -84,14 +84,14 @@
   vimItem.state =  NSOnState;
   [settings setVimEditor];
   neoVimItem.state = NSOffState;
-  statusItem.image = [NSImage imageNamed:@"icon_vim.png"];
+  statusItem.image = [NSImage imageNamed:@"statusbar_icon_vim"];
 }
 
 -(void)selectNeoVimEditor{
   neoVimItem.state = NSOnState;
   [settings setNeoVimEditor];
   vimItem.state = NSOffState;
-  statusItem.image = [NSImage imageNamed:@"icon_neovim.png"];
+  statusItem.image = [NSImage imageNamed:@"statusbar_icon_neovim"];
 }
 
 @end
